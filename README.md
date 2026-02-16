@@ -530,3 +530,265 @@
 179. How do window functions perform in Snowflake compared to GROUP BY aggregations for the same result?
 180. What is the role of the pruning ratio metric in assessing the efficiency of a Snowflake query?
 
+# Snowflake Interview Questions — Set 3
+### 180 New Technical & Practical Questions (Non-SQL, Non-Duplicate)
+
+---
+
+## 1. Snowflake Tasks — Advanced
+
+1. How do you implement conditional branching logic within a Snowflake Task DAG?
+2. What is the SYSTEM$TASK_DEPENDENTS_ENABLE procedure and when do you use it?
+3. How do finalizer tasks work in Snowflake and what are their use cases?
+4. What happens to child tasks when a root task is suspended?
+5. How do you handle task failures gracefully without stopping the entire DAG?
+6. What is the maximum number of tasks allowed in a single DAG in Snowflake?
+7. How do you pass parameters between tasks in a Snowflake DAG?
+8. How do you implement task retries with exponential backoff in Snowflake?
+9. What is SYSTEM$CURRENT_USER_TASK_NAME and how is it used inside task logic?
+10. How do you migrate a complex Airflow DAG to native Snowflake Tasks?
+
+---
+
+## 2. Snowpipe — Advanced
+
+11. What is Snowpipe REST API and how does it differ from event-driven Snowpipe?
+12. How do you use the insertFiles and insertReport Snowpipe REST endpoints?
+13. What is Snowpipe Streaming and how does it differ from classic Snowpipe?
+14. How does Snowpipe Streaming handle schema inference for incoming records?
+15. What client SDKs support Snowpipe Streaming and what are the minimum version requirements?
+16. How do you manage offset tracking and exactly-once delivery semantics with Snowpipe Streaming?
+17. What are the latency characteristics of Snowpipe Streaming vs. classic Snowpipe?
+18. How do you monitor Snowpipe Streaming channel status and ingestion lag?
+19. What happens when a Snowpipe Streaming channel encounters a schema mismatch?
+20. How do you handle dead-letter scenarios for records that fail Snowpipe ingestion?
+
+---
+
+## 3. Data Transformation Patterns
+
+21. What is the ELT (Extract, Load, Transform) pattern and how does Snowflake enable it?
+22. How do you implement incremental transformation logic using Streams and Dynamic Tables together?
+23. What is the MERGE statement pattern for upserts and how do you make it idempotent?
+24. How do you implement Type 1 SCD (overwrite) efficiently in Snowflake pipelines?
+25. How do you implement Type 2 SCD (versioned history) using Snowflake Streams?
+26. How do you implement Type 6 SCD (hybrid) in a Snowflake data warehouse?
+27. What is a date spine and how do you generate one efficiently in Snowflake?
+28. How do you handle many-to-many relationships in a Snowflake dimensional model?
+29. What strategies do you use for deduplicating records during transformation in Snowflake?
+30. How do you implement surrogate key generation at scale in Snowflake?
+
+---
+
+## 4. Snowflake with dbt — Deep Dive
+
+31. How does dbt manage incremental models in Snowflake and what strategies are available?
+32. What is the dbt merge strategy for incremental models and when do you use it over insert-overwrite?
+33. How do you configure dbt to use Snowflake dynamic table materializations?
+34. What is dbt source freshness and how does it integrate with Snowflake metadata?
+35. How do you manage dbt environments (dev/staging/prod) using Snowflake databases and schemas?
+36. What is the dbt clone materialization and how does it leverage Snowflake Zero-Copy Cloning?
+37. How do you optimize dbt model run times by controlling warehouse size per model?
+38. What are dbt macros and how do you use them to generate Snowflake-specific SQL patterns?
+39. How does dbt handle schema changes (column additions/deletions) in Snowflake?
+40. What is dbt semantic layer and how does it interact with Snowflake Cortex Analyst?
+
+---
+
+## 5. Snowflake Feature Flags & Preview Features
+
+41. What is the process for enabling preview features in a Snowflake account?
+42. How do you check which preview or experimental features are enabled in your account?
+43. What is the difference between a Private Preview, Public Preview, and Generally Available feature?
+44. How do you provide feedback to Snowflake on preview features?
+45. What risks should you consider before enabling preview features in a production account?
+46. How do you track the Snowflake release schedule and upcoming feature changes?
+47. What is the Snowflake behavior change policy and how does it affect production deployments?
+48. How do you test behavior change bundles before they are enforced in your account?
+49. What is SYSTEM$BEHAVIOR_CHANGE_BUNDLE_STATUS and how do you use it?
+50. How do you roll back an accidentally enabled behavior change in Snowflake?
+
+---
+
+## 6. Snowflake Python Integration — Advanced
+
+51. How do you use the Snowflake Python connector's executemany method for bulk inserts?
+52. What is the write_pandas function and how does it efficiently load a pandas DataFrame into Snowflake?
+53. How do you use the fetch_pandas_all and fetch_pandas_batches methods for large result sets?
+54. What is the Snowflake Python connector's cursor fetch size and how does it affect memory usage?
+55. How do you implement connection pooling with the Snowflake Python connector?
+56. What is the snowflake-sqlalchemy library and how does it differ from the native Python connector?
+57. How do you use environment variables and secrets managers to securely store Snowflake credentials in Python?
+58. How does the Snowflake Python connector handle automatic retry on transient errors?
+59. What is the async query execution feature in the Snowflake Python connector?
+60. How do you profile and debug slow Snowflake queries submitted via the Python connector?
+
+---
+
+## 7. Snowpark — Advanced
+
+61. How do you deploy a Snowpark application using a staged JAR or Python file?
+62. What is a Snowpark Session object and how do you manage its lifecycle?
+63. How do you use Snowpark to call third-party Python libraries not available by default?
+64. What are Snowpark packages and how do you specify dependencies using the packages parameter?
+65. How does Snowpark handle UDF serialization and deployment to Snowflake's compute layer?
+66. What is the difference between a permanent and temporary UDF in Snowpark?
+67. How do you unit test Snowpark DataFrames locally without connecting to Snowflake?
+68. What is the Snowpark local testing framework and what are its limitations?
+69. How do you optimize Snowpark code to minimize the number of round trips to Snowflake?
+70. What are the best practices for error handling in Snowpark stored procedures?
+
+---
+
+## 8. Snowflake Scripting & Procedural Logic
+
+71. What is Snowflake Scripting and how does it extend Snowflake's procedural capabilities?
+72. How do you declare and use variables in Snowflake Scripting blocks?
+73. What control flow constructs are available in Snowflake Scripting (IF, LOOP, WHILE, FOR)?
+74. How do you use cursors in Snowflake Scripting to iterate over query results?
+75. What is exception handling in Snowflake Scripting and how do you raise custom exceptions?
+76. How do you use anonymous blocks in Snowflake Scripting for ad hoc procedural logic?
+77. What is the difference between EXECUTE IMMEDIATE and a named stored procedure in Snowflake?
+78. How do you dynamically construct and execute SQL statements in Snowflake Scripting?
+79. How do you return result sets from Snowflake Scripting blocks?
+80. What are the performance considerations when using Snowflake Scripting vs. set-based SQL?
+
+---
+
+## 9. Iceberg Tables — Advanced
+
+81. How does Snowflake write Iceberg table metadata and what format does it follow (v1 vs. v2)?
+82. What is the difference between Iceberg table snapshots and Snowflake Time Travel?
+83. How do you compact small Iceberg files in Snowflake-managed Iceberg tables?
+84. How does partition evolution work in Iceberg tables and does Snowflake support it?
+85. What external catalog integrations does Snowflake support for Iceberg tables (Glue, Polaris)?
+86. What is Snowflake Open Catalog (formerly Polaris) and how does it relate to Iceberg?
+87. How do you query an Iceberg table managed by an external engine (e.g., Spark) from Snowflake?
+88. What are the write limitations of externally managed Iceberg tables accessed from Snowflake?
+89. How does row-level delete work in Iceberg v2 and how does Snowflake handle it?
+90. What are the performance trade-offs between Snowflake-native tables and Iceberg tables?
+
+---
+
+## 10. Access Control — Advanced
+
+91. How do you implement attribute-based access control (ABAC) patterns using Snowflake Row Access Policies?
+92. What is a policy assignment and how do you apply a single masking policy to multiple tables?
+93. How do you use SESSION_CONTEXT or CURRENT_USER in a Row Access Policy for dynamic filtering?
+94. What is a conditional masking policy and how does it differ from a standard masking policy?
+95. How do you implement data tokenization using Dynamic Data Masking in Snowflake?
+96. What is the difference between using a Secure View vs. a Row Access Policy for data restriction?
+97. How do you audit which masking policies are applied to which columns across all tables?
+98. How do you handle policy conflicts when multiple policies apply to the same object?
+99. What is role lineage in Snowflake and how do you trace inherited privileges?
+100. How do you implement break-glass emergency access procedures in a Snowflake environment?
+
+---
+
+## 11. Snowflake Releases & Upgrades
+
+101. How does Snowflake handle platform upgrades and what is the impact on running workloads?
+102. What is Snowflake's weekly release cadence and how are releases deployed?
+103. How do you stay informed about breaking changes introduced in Snowflake releases?
+104. What is the Early Access program in Snowflake and how do you enroll?
+105. How do you test your Snowflake workloads against upcoming release changes in a non-production account?
+106. What is the Snowflake release notes changelog and where do you find it?
+107. How does Snowflake minimize downtime during major version upgrades?
+108. What is a Snowflake hotfix release and when does Snowflake deploy one?
+109. How do behavior change bundles affect stored procedures and UDFs written in older syntax?
+110. What is the Snowflake deprecation policy and how much notice is typically given?
+
+---
+
+## 12. Data Modeling in Snowflake
+
+111. When would you choose a star schema over a snowflake schema in Snowflake?
+112. How does Snowflake's columnar storage affect the choice between normalized and denormalized models?
+113. What is the Data Vault 2.0 methodology and how does it map to Snowflake objects?
+114. How do you model Hub, Link, and Satellite tables in a Snowflake Data Vault?
+115. What is the One Big Table (OBT) pattern and when does it make sense in Snowflake?
+116. How do you handle fact table partitioning strategies in Snowflake without traditional partitioning?
+117. What is a conformed dimension and how do you implement it across multiple fact tables in Snowflake?
+118. How do you model multi-currency financial data in a Snowflake data warehouse?
+119. How do you design for data archiving and purging in a Snowflake dimensional model?
+120. What considerations apply when modeling high-cardinality dimensions in Snowflake?
+
+---
+
+## 13. CI/CD & DevOps for Snowflake
+
+121. What tools do you use to implement CI/CD pipelines for Snowflake object deployments?
+122. How do you use SchemaChange or Flyway for database migration management in Snowflake?
+123. What is the Snowflake CLI (snow CLI) and what DevOps workflows does it support?
+124. How do you implement blue-green deployments for Snowflake data pipelines?
+125. How do you manage secrets and credentials in a CI/CD pipeline that deploys to Snowflake?
+126. What is the role of Git integration in Snowflake and how do you link a repository to Snowflake objects?
+127. How does Snowflake's native Git integration work with Snowflake Scripting and Snowpark?
+128. How do you implement automated rollback for a failed Snowflake deployment?
+129. What testing strategies do you apply in a Snowflake CI/CD pipeline (unit, integration, data quality)?
+130. How do you use Terraform's Snowflake provider to manage roles, warehouses, and databases as code?
+
+---
+
+## 14. Monitoring & Troubleshooting — Advanced
+
+131. What is the QUERY_HISTORY table function and how does it differ from the QUERY_HISTORY view?
+132. How do you identify the top credit-consuming queries in a Snowflake account over the past 30 days?
+133. What is the WAREHOUSE_METERING_HISTORY view and what insights does it provide?
+134. How do you diagnose a query that is stuck in a "queued" state for an extended period?
+135. What does a high "Bytes Spilled to Remote Storage" metric in Query Profile indicate?
+136. How do you use the ACTIVE_QUERIES view to monitor currently running queries?
+137. What is the LOGIN_HISTORY view and what security insights can you derive from it?
+138. How do you detect and kill long-running or runaway queries in Snowflake?
+139. What is the COPY_HISTORY view and what troubleshooting information does it provide?
+140. How do you use the PIPE_USAGE_HISTORY view to diagnose Snowpipe issues?
+
+---
+
+## 15. Data Migration & Modernization
+
+141. What is the Snowflake Migration Accelerator and what platforms does it support?
+142. How do you migrate stored procedures from Oracle PL/SQL to Snowflake Scripting?
+143. What tools does Snowflake provide or recommend for migrating from Teradata?
+144. How do you assess query compatibility when migrating from Redshift to Snowflake?
+145. What are the common data type mapping challenges when migrating from SQL Server to Snowflake?
+146. How do you handle sequence objects and identity columns during migration to Snowflake?
+147. What is SnowConvert and how does it automate code migration to Snowflake?
+148. How do you validate data accuracy after a migration from an on-premises warehouse to Snowflake?
+149. What is the recommended approach for migrating ETL jobs (Informatica, SSIS) to Snowflake ELT?
+150. How do you handle timezone and date format differences when migrating data to Snowflake?
+
+---
+
+## 16. Specialized & Emerging Features
+
+151. What is Snowflake Notebooks and how does it differ from Jupyter Notebooks?
+152. How do Snowflake Notebooks integrate with Snowpark and Cortex AI features?
+153. What is Document AI in Snowflake and what document processing tasks does it support?
+154. How does Snowflake handle vector data types and similarity search?
+155. What is the VECTOR data type in Snowflake and what distance functions does it support?
+156. How do you build a semantic search application using Snowflake's vector support?
+157. What is Snowflake ML Classification and Forecasting and how do you invoke these functions?
+158. How does the Snowflake Forecast function handle seasonality and holiday effects?
+159. What is the Anomaly Detection function in Snowflake and what algorithm does it use?
+160. How do you evaluate the accuracy of a Snowflake ML Forecast or Classification model?
+161. What is Arctic, Snowflake's open-source LLM, and how does it integrate with Cortex?
+162. How does Snowflake handle unstructured data storage and processing for images and PDFs?
+163. What is the PARSE_DOCUMENT function in Snowflake and what file types does it support?
+164. How do you extract structured data from PDFs using Snowflake's Document AI?
+165. What is the role of the STAGE in storing unstructured files for Document AI processing?
+166. How does Snowflake's Cortex Guard feature protect against prompt injection attacks?
+167. What are Trust & Safety features in Snowflake Cortex and how do you configure them?
+168. How does Snowflake handle model versioning for Snowpark ML models stored in the Model Registry?
+169. What is the Snowflake Feature Store and how does it support ML feature engineering?
+170. How do you deploy and serve a Snowpark ML model as a UDF for real-time inference?
+171. What is Snowflake Trail and how does it provide end-to-end data lineage across pipelines?
+172. How does Snowflake integrate with OpenTelemetry for distributed tracing?
+173. What is the Snowflake Connector for Salesforce and what data synchronization patterns does it support?
+174. How do you implement a real-time leaderboard or recommendation engine using Snowflake Hybrid Tables?
+175. What is the role of ACID transactions in Snowflake and how are they implemented?
+176. How does Snowflake handle multi-statement transactions and what isolation level does it use?
+177. What is a savepoint in Snowflake transactions and how do you use it?
+178. How do Snowflake transactions interact with DDL statements (implicit commit behavior)?
+179. What is the maximum transaction duration in Snowflake and what happens when it is exceeded?
+180. How do you implement optimistic locking patterns using Snowflake's transaction model for high-concurrency writes?
