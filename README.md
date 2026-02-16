@@ -1713,4 +1713,337 @@
 222. How do you handle out-of-order events in a Snowflake streaming aggregation pipeline?
 223. How do you implement a real-time top-N query on continuously arriving data?
 224. How do you use QUALIFY with window functions for streaming deduplication?
-225. H
+
+
+# Snowflake Administration — Interview Questions
+### 250 Technical & Practical Questions Covering All Aspects of Snowflake Administration
+
+---
+
+## 1. Account Setup & Configuration
+
+1. What are the first tasks an administrator should perform after a new Snowflake account is provisioned?
+2. How do you configure the default timezone for a Snowflake account?
+3. How do you set account-level parameters vs. session-level parameters in Snowflake?
+4. What is the SYSTEM$GLOBAL_ACCOUNT_PARAMS view and what does it expose?
+5. How do you enable or disable specific Snowflake features at the account level?
+6. What is the account locator and how does it differ from the account identifier in Snowflake?
+7. How do you rename a Snowflake account within an Organization?
+8. How do you configure the default warehouse, role, and namespace for all users in an account?
+9. What are the account-level parameters that affect query behavior and how do you manage them?
+10. How do you set the STATEMENT_TIMEOUT_IN_SECONDS parameter at the account level?
+11. How do you configure the LOCK_TIMEOUT parameter and what does it control?
+12. How do you set TRANSACTION_DEFAULT_ISOLATION_LEVEL at the account level?
+13. What is the USE_CACHED_RESULT parameter and how does toggling it affect all queries?
+14. How do you configure the maximum number of concurrent queries allowed per warehouse?
+15. How do you set up account-level email notifications for critical system events?
+
+---
+
+## 2. User Management
+
+16. How do you create a new user in Snowflake using the CREATE USER command?
+17. What user properties can you configure at creation time (password, default role, warehouse, etc.)?
+18. How do you enforce password complexity policies for Snowflake users?
+19. How do you set a password expiration policy for Snowflake users?
+20. How do you disable or lock a Snowflake user account without deleting it?
+21. How do you reset a user's password as an administrator in Snowflake?
+22. How do you configure a user to authenticate using key-pair authentication instead of a password?
+23. How do you rotate key-pair authentication credentials for a user without downtime?
+24. How do you configure MFA (Multi-Factor Authentication) for a user in Snowflake?
+25. How do you enforce MFA for all users in a Snowflake account?
+26. How do you check when a user last logged in to Snowflake?
+27. How do you identify inactive users who have not logged in for more than 90 days?
+28. How do you bulk-create users in Snowflake using scripting or automation?
+29. How do you configure a service account user in Snowflake with appropriate restrictions?
+30. What is the difference between a person user and a service account user in terms of Snowflake configuration best practices?
+31. How do you configure a user's default namespace (database and schema)?
+32. How do you prevent a user from changing their own default role or warehouse?
+33. How do you configure session timeout settings at the user level?
+34. What is the MUST_CHANGE_PASSWORD property and when do you use it?
+35. How do you audit all users and their properties using Snowflake system views?
+
+---
+
+## 3. Role Management & RBAC
+
+36. How do you design a role hierarchy for a large enterprise Snowflake deployment?
+37. What is the principle of least privilege and how do you apply it in Snowflake RBAC?
+38. How do you create a custom role and grant it to a user in Snowflake?
+39. How do you grant a role to another role to build a role hierarchy?
+40. What is the difference between GRANT ROLE and GRANT PRIVILEGE in Snowflake?
+41. How do you revoke a privilege or role from a user or role?
+42. How do you identify all privileges granted to a specific role using system views?
+43. How do you identify all roles assigned to a specific user?
+44. What is role inheritance in Snowflake and how does privilege inheritance work?
+45. How do you implement functional roles vs. access roles in Snowflake?
+46. What is the ACCOUNTADMIN role and why should it be used sparingly?
+47. How do you audit which users have ACCOUNTADMIN and SECURITYADMIN roles?
+48. How do you prevent privilege escalation in a Snowflake RBAC model?
+49. How do you implement a read-only role for BI tools that access Snowflake?
+50. How do you create environment-specific roles (DEV, TEST, PROD) in Snowflake?
+51. How do you implement row-level and column-level security using roles?
+52. What is the SHOW GRANTS command and how do you use it for role auditing?
+53. How do you use the IS_ROLE_IN_SESSION function in access control policies?
+54. How do you revoke all privileges from a role without dropping it?
+55. How do you document and maintain a role matrix for a Snowflake account?
+
+---
+
+## 4. Warehouse Administration
+
+56. How do you create and configure a Virtual Warehouse for a specific team or workload?
+57. How do you modify an existing warehouse's size, auto-suspend, and auto-resume settings?
+58. How do you start and stop a warehouse manually as an administrator?
+59. How do you identify which queries are currently running on a specific warehouse?
+60. How do you kill a specific query running on a warehouse as an administrator?
+61. What is the ABORT_DETACHED_QUERY parameter and when do you enable it?
+62. How do you configure warehouse-level query timeout to prevent runaway queries?
+63. How do you set up a dedicated warehouse for Snowpipe vs. interactive queries?
+64. How do you configure a multi-cluster warehouse for peak-load handling?
+65. How do you monitor warehouse queue depth and average queue time?
+66. How do you identify which users are consuming the most warehouse credits?
+67. How do you restrict which roles or users can use a specific warehouse?
+68. How do you set warehouse-level resource limits using Resource Monitors?
+69. How do you configure a warehouse to automatically scale in and out based on load?
+70. What is warehouse contention and how do you resolve it through warehouse architecture?
+71. How do you implement a chargeback model using multiple warehouses per team?
+72. How do you review and optimize warehouse utilization across an account?
+73. How do you configure the MAX_CONCURRENCY_LEVEL parameter for a warehouse?
+74. What is the STATEMENT_QUEUED_TIMEOUT_IN_SECONDS parameter and how does it work?
+75. How do you suspend all warehouses in an account during a maintenance window?
+
+---
+
+## 5. Database, Schema & Object Administration
+
+76. How do you create a database with specific data retention and Time Travel settings?
+77. How do you transfer ownership of a database or schema to a different role?
+78. How do you clone a production database to create a development environment?
+79. How do you set default privileges for objects created in a schema using FUTURE GRANTS?
+80. What is a FUTURE GRANT in Snowflake and why is it important for schema administration?
+81. How do you grant access to all existing tables in a schema to a role in one command?
+82. How do you prevent a schema from being accidentally dropped?
+83. How do you rename a database or schema in Snowflake?
+84. How do you move a table from one schema to another in Snowflake?
+85. How do you identify all objects owned by a specific role?
+86. How do you implement a naming convention enforcement strategy in Snowflake?
+87. How do you set up managed access schemas in Snowflake and when do you use them?
+88. What is a managed access schema and how does it change privilege management?
+89. How do you configure object-level Time Travel retention at the database vs. table level?
+90. How do you audit all objects in a Snowflake account using INFORMATION_SCHEMA or ACCOUNT_USAGE?
+
+---
+
+## 6. Security Administration
+
+91. How do you configure a Network Policy to restrict access to specific IP ranges?
+92. How do you apply a Network Policy at the account level vs. the user level?
+93. How do you set up PrivateLink for a Snowflake account on AWS, Azure, or GCP?
+94. How do you configure SAML 2.0 SSO integration with an identity provider like Okta?
+95. How do you configure OAuth 2.0 for a third-party BI tool connecting to Snowflake?
+96. How do you configure Scim provisioning for automated user lifecycle management?
+97. What is SCIM and how does it automate user and group provisioning in Snowflake?
+98. How do you rotate the Snowflake account encryption key using Tri-Secret Secure?
+99. How do you configure customer-managed keys (CMK) for Snowflake encryption?
+100. How do you respond to a security incident where a Snowflake user credential is compromised?
+101. How do you disable all access to Snowflake immediately in a security emergency?
+102. How do you implement IP allowlisting for service accounts connecting to Snowflake?
+103. How do you configure session policies to enforce MFA or restrict session duration?
+104. What is a session policy in Snowflake and how does it differ from a network policy?
+105. How do you audit failed login attempts and suspicious access patterns in Snowflake?
+106. How do you configure authentication policies in Snowflake for different user types?
+107. What is an authentication policy and how does it differ from a session policy?
+108. How do you enforce that all users must use SSO and disable password-based login?
+109. How do you manage secrets (API keys, passwords) using Snowflake Secret objects?
+110. How do you use Snowflake Secrets in Stored Procedures and External Functions securely?
+
+---
+
+## 7. Resource Monitors & Cost Administration
+
+111. How do you create a Resource Monitor and assign it to one or more warehouses?
+112. What are the trigger thresholds available for Resource Monitors (notify, suspend, suspend immediately)?
+113. How do you configure a Resource Monitor to notify administrators via email?
+114. How do you set a monthly credit quota for a Resource Monitor?
+115. How do you assign a Resource Monitor at the account level vs. the warehouse level?
+116. What is the difference between a credit quota reset frequency (daily, weekly, monthly)?
+117. How do you identify which Resource Monitor triggered a warehouse suspension?
+118. How do you configure Budgets in Snowflake and how do they differ from Resource Monitors?
+119. How do you set up cost attribution tags to track spending by team or project?
+120. How do you use the ACCOUNT_USAGE.METERING_HISTORY view for cost reporting?
+121. How do you generate a monthly cost report broken down by warehouse for leadership?
+122. How do you identify unexpected cost spikes using Snowflake's cost management tools?
+123. How do you configure alerts on cost anomalies using Snowflake Alerts?
+124. How do you implement a cost showback or chargeback model for internal teams?
+125. How do you forecast future Snowflake spending based on historical usage trends?
+
+---
+
+## 8. Monitoring & Observability Administration
+
+126. What are the key ACCOUNT_USAGE views every Snowflake administrator should monitor regularly?
+127. How do you query QUERY_HISTORY to find the top 10 longest-running queries this week?
+128. How do you use the WAREHOUSE_LOAD_HISTORY view to analyze warehouse utilization?
+129. How do you monitor login activity and detect abnormal login patterns?
+130. How do you use the ACCESS_HISTORY view to track which users accessed which data?
+131. How do you monitor Snowpipe usage and ingestion costs using system views?
+132. How do you track storage consumption trends over time using ACCOUNT_USAGE?
+133. How do you set up a regular health check report for a Snowflake account?
+134. How do you monitor task execution history and identify frequently failing tasks?
+135. How do you use the SESSIONS view to monitor active sessions and their properties?
+136. How do you detect and alert on unusually high query compilation times?
+137. How do you monitor replication lag for databases using replication group views?
+138. How do you use Snowflake's native telemetry and event tables for observability?
+139. How do you build a Snowflake operations dashboard using Snowsight or a BI tool?
+140. How do you configure Snowflake to send usage metrics to an external monitoring platform like Datadog?
+
+---
+
+## 9. Data Retention, Backup & Recovery Administration
+
+141. How do you configure Time Travel retention at different object levels in Snowflake?
+142. How do you recover a accidentally dropped table using Time Travel and UNDROP?
+143. How do you restore a table to a specific point in time using Time Travel?
+144. What objects support UNDROP in Snowflake and what are the limitations?
+145. How do you recover from an accidental bulk DELETE or UPDATE in Snowflake?
+146. What is Fail-Safe in Snowflake and how does it differ from Time Travel for recovery?
+147. How do you request a Fail-Safe recovery from Snowflake Support?
+148. How do you manage the storage cost impact of long Time Travel retention periods?
+149. How do you set Time Travel to 0 days for transient tables to save storage costs?
+150. How do you implement a data archiving strategy for old data in Snowflake?
+151. How do you use Zero-Copy Cloning as part of a backup strategy?
+152. What are the limitations of Zero-Copy Cloning as a backup mechanism?
+153. How do you automate daily clones of critical tables as a backup using Tasks?
+154. How do you implement a cross-region backup strategy using Snowflake replication?
+155. What is your disaster recovery runbook for a critical Snowflake data platform outage?
+
+---
+
+## 10. Replication & Business Continuity Administration
+
+156. How do you set up database replication between two Snowflake accounts?
+157. How do you create a Replication Group and add databases to it?
+158. How do you create a Failover Group for business continuity?
+159. How do you schedule automatic replication refreshes for a secondary database?
+160. How do you monitor replication lag using the REPLICATION_GROUP_REFRESH_HISTORY view?
+161. How do you promote a secondary database to primary during a failover event?
+162. How do you fail back to the original primary after a failover event?
+163. How do you test a failover without impacting production workloads?
+164. What objects are included vs. excluded in Snowflake database replication?
+165. How do you configure replication across different cloud providers (cross-cloud replication)?
+166. What are the network and latency considerations for cross-region replication?
+167. How do you handle replication of dynamic tables and streams in a replication group?
+168. What is the cost structure for Snowflake database replication?
+169. How do you set up client redirect for automatic failover in application connection strings?
+170. How do you document and test your RTO and RPO for a Snowflake-based data platform?
+
+---
+
+## 11. Performance Administration
+
+171. How do you identify the top credit-consuming queries in an account over the past month?
+172. How do you identify tables that would benefit from clustering key optimization?
+173. How do you use SYSTEM$CLUSTERING_INFORMATION to assess table health?
+174. How do you manage Automatic Clustering — when do you enable or disable it?
+175. How do you identify and resolve query spilling issues across warehouses?
+176. How do you tune warehouse sizes for different workload types (ETL, BI, ad hoc)?
+177. How do you use the Query Acceleration Service to handle unpredictable query spikes?
+178. How do you manage the Search Optimization Service across tables in an account?
+179. How do you identify queries that are good candidates for result cache reuse?
+180. How do you reduce query compilation overhead for frequently repeated queries?
+181. How do you manage warehouse cold start latency for infrequently used warehouses?
+182. How do you identify and resolve data skew issues in large Snowflake tables?
+183. How do you analyze and reduce storage bloat from micro-partition fragmentation?
+184. How do you implement query governance to prevent runaway analytical queries?
+185. How do you prioritize query execution across teams sharing a warehouse?
+
+---
+
+## 12. Patch, Upgrade & Change Management
+
+186. How does Snowflake manage platform upgrades and what is the administrator's role?
+187. How do you stay informed of upcoming Snowflake behavior changes that may affect production?
+188. How do you test behavior change bundles before they are enforced in your account?
+189. How do you roll back an accidentally applied behavior change bundle?
+190. How do you manage Snowflake feature flag enablement in a controlled way?
+191. How do you implement a change management process for Snowflake DDL changes?
+192. How do you use Snowflake's Git integration to track DDL changes as code?
+193. How do you coordinate Snowflake upgrades with dependent BI tools and ETL pipelines?
+194. How do you communicate planned maintenance windows to Snowflake users?
+195. What is your process for validating Snowflake platform health after an upgrade?
+
+---
+
+## 13. Multi-Account & Organization Administration
+
+196. How do you manage multiple Snowflake accounts within a single Organization?
+197. What is the ORGADMIN role and what administrative tasks require it?
+198. How do you create a new Snowflake account within an Organization using ORGADMIN?
+199. How do you enforce consistent security policies across multiple Snowflake accounts?
+200. How do you implement centralized cost monitoring across all accounts in an Organization?
+201. How do you share common role definitions and policies across multiple accounts?
+202. How do you manage cross-account data sharing within an Organization?
+203. How do you implement a hub-and-spoke Snowflake architecture using Organizations?
+204. How do you handle user provisioning consistently across multiple Snowflake accounts?
+205. What tooling do you recommend for managing Snowflake infrastructure across multiple accounts at scale?
+
+---
+
+## 14. Compliance & Audit Administration
+
+206. How do you configure Snowflake to meet SOC 2 Type II compliance requirements?
+207. How do you configure Snowflake for HIPAA compliance?
+208. How do you configure Snowflake for GDPR compliance including data residency?
+209. How do you configure Snowflake for PCI-DSS compliance?
+210. How do you generate an audit trail of all DDL changes made in a Snowflake account?
+211. How do you audit all data access events for a specific sensitive table?
+212. How do you configure Snowflake to retain audit logs for a specific number of years?
+213. How do you respond to a data access audit request from a regulator?
+214. How do you implement separation of duties in Snowflake to meet compliance requirements?
+215. How do you document and evidence Snowflake access controls for an external audit?
+216. How do you configure Snowflake's ACCESS_HISTORY view retention for compliance?
+217. What is the QUERY_HISTORY retention period and how do you extend it for compliance?
+218. How do you implement data classification tagging for compliance in Snowflake?
+219. How do you prove to an auditor that sensitive data is masked for unauthorized users?
+220. How do you implement a data deletion workflow for GDPR right-to-erasure requests?
+
+---
+
+## 15. Automation & Infrastructure as Code
+
+221. How do you use Terraform to manage Snowflake resources as infrastructure as code?
+222. What Snowflake resources does the Terraform Snowflake provider support?
+223. How do you manage Terraform state for Snowflake in a team environment?
+224. How do you use the Snowflake CLI (snow CLI) for administrative automation?
+225. How do you automate user provisioning and deprovisioning using the Snowflake REST API?
+226. How do you use Python scripts to automate routine Snowflake administrative tasks?
+227. How do you implement GitOps workflows for Snowflake DDL and configuration changes?
+228. How do you use SchemaChange or Liquibase for database migration management in Snowflake?
+229. How do you automate warehouse scaling based on time-of-day patterns using Tasks?
+230. How do you implement automated cost reports delivered via email using Snowflake Tasks and Alerts?
+231. How do you automate the creation of cloned dev environments on a nightly schedule?
+232. How do you use Ansible or similar tools for Snowflake configuration management?
+233. How do you implement a self-service provisioning portal for Snowflake access requests?
+234. How do you automate stale user deactivation based on last login date?
+235. How do you build an automated Snowflake health check that runs daily and reports issues?
+
+---
+
+## 16. Troubleshooting & Incident Response
+
+236. How do you triage a report that "Snowflake is slow" from a business user?
+237. How do you diagnose a warehouse that is consistently at 100% utilization?
+238. How do you handle a situation where a critical pipeline has been running for hours with no completion?
+239. How do you recover from a scenario where ACCOUNTADMIN credentials are lost?
+240. How do you diagnose and resolve a sudden spike in Snowflake storage costs?
+241. How do you handle a data breach scenario where unauthorized access to Snowflake is detected?
+242. How do you diagnose intermittent connectivity issues between an application and Snowflake?
+243. How do you handle a scenario where a developer accidentally dropped a production schema?
+244. How do you investigate a compliance violation where a user accessed data outside their authorized scope?
+245. How do you triage and resolve a situation where Snowpipe has stopped ingesting data?
+246. How do you handle a scenario where a Resource Monitor has suspended a critical warehouse unexpectedly?
+247. How do you diagnose a Snowflake account that has exceeded its storage quota?
+248. How do you respond to a situation where a third-party integration is causing excessive credit consumption?
+249. How do you conduct a post-incident review after a Snowflake outage or data incident?
+250. What does your ideal Snowflake administrator runbook look like for a production environment?
