@@ -1398,3 +1398,319 @@
 198. What metadata can you tag on a Snowflake Notebook for governance and discoverability?
 199. How do you handle Notebook deprecation and archiving when a project ends?
 200. What is your overall recommended workflow for taking a Snowflake Notebook from prototype to production?
+
+# Snowflake — Hybrid Tables, Unistore & Streaming Analytics
+### 350 Technical & Practical Interview Questions
+
+---
+
+## PART A: HYBRID TABLES & UNISTORE
+
+---
+
+## 1. Hybrid Tables — Fundamentals
+
+1. What is a Hybrid Table in Snowflake and what problem does it solve?
+2. What is Snowflake Unistore and how does Hybrid Tables fit within it?
+3. How does a Hybrid Table differ from a standard Snowflake table in terms of storage architecture?
+4. What workload types are Hybrid Tables optimized for compared to regular Snowflake tables?
+5. What is the core promise of Unistore — combining OLTP and OLAP — and how does Snowflake achieve it?
+6. In which Snowflake editions are Hybrid Tables available?
+7. How do you create a Hybrid Table in Snowflake? What syntax differences exist vs. a standard table?
+8. What happens under the hood when you INSERT a single row into a Hybrid Table?
+9. How does Snowflake physically store Hybrid Table data differently from columnar Snowflake tables?
+10. What is the role of a row store in Hybrid Tables and why is it important for OLTP workloads?
+11. Can a Hybrid Table and a standard Snowflake table exist in the same database and schema?
+12. What is the maximum row size supported by a Hybrid Table?
+13. How do Hybrid Tables handle wide tables with many columns?
+14. What data types are supported in Hybrid Tables and are there any restrictions?
+15. Can you use VARIANT or semi-structured data types in a Hybrid Table?
+
+---
+
+## 2. Hybrid Tables — Indexes
+
+16. What types of indexes does Snowflake support on Hybrid Tables?
+17. What is a primary key index in a Hybrid Table and why is it mandatory?
+18. Can a Hybrid Table exist without a primary key? What happens if you try to create one?
+19. What is a secondary index in a Hybrid Table and how does it differ from a primary key index?
+20. How do you create a secondary index on a Hybrid Table column?
+21. Can you create a composite index on multiple columns of a Hybrid Table?
+22. How do indexes on Hybrid Tables improve point lookup query performance?
+23. What is the write overhead of maintaining indexes on a Hybrid Table?
+24. How do you drop an index from a Hybrid Table without dropping the table?
+25. Can you add an index to an existing Hybrid Table after it has been created?
+26. How does Snowflake decide whether to use a primary or secondary index during query execution?
+27. What is a unique index on a Hybrid Table and how does it enforce uniqueness?
+28. How do indexes on Hybrid Tables interact with Snowflake's query optimizer?
+29. What system views can you query to inspect index definitions on Hybrid Tables?
+30. What are the storage cost implications of maintaining multiple indexes on a Hybrid Table?
+
+---
+
+## 3. Hybrid Tables — ACID Transactions
+
+31. What ACID properties do Hybrid Tables support in Snowflake?
+32. How does Snowflake implement atomicity for multi-row transactions on Hybrid Tables?
+33. What isolation level do Hybrid Table transactions use in Snowflake?
+34. How does Snowflake handle read-write conflicts on Hybrid Tables under concurrent access?
+35. What is row-level locking in Hybrid Tables and how does it differ from Snowflake's standard table locking?
+36. How do you begin, commit, and roll back an explicit transaction involving a Hybrid Table?
+37. Can a single Snowflake transaction span both Hybrid Tables and standard tables?
+38. What happens when two concurrent transactions try to update the same row in a Hybrid Table?
+39. How does Snowflake handle deadlocks in Hybrid Table transactions?
+40. What is the maximum transaction duration for Hybrid Table operations?
+41. How do savepoints work within Hybrid Table transactions?
+42. What is the difference between optimistic and pessimistic concurrency control and which does Snowflake use for Hybrid Tables?
+43. How do you handle transaction retry logic in application code when using Hybrid Tables?
+44. What happens to an uncommitted Hybrid Table transaction when a session times out?
+45. How does Snowflake ensure durability for Hybrid Table writes?
+
+---
+
+## 4. Hybrid Tables — DML Operations
+
+46. How does an INSERT operation on a Hybrid Table differ in performance from a standard table INSERT?
+47. How do you perform a single-row UPDATE on a Hybrid Table using the primary key?
+48. How do bulk UPDATE operations perform on Hybrid Tables compared to standard tables?
+49. How do you perform a DELETE on a Hybrid Table by primary key?
+50. How does MERGE behave on a Hybrid Table and what are the performance characteristics?
+51. What is the impact of large batch INSERTs on Hybrid Table index maintenance?
+52. How do you implement an upsert pattern on a Hybrid Table efficiently?
+53. Can you use the COPY INTO command to load data into a Hybrid Table?
+54. How do you handle constraint violations (primary key, unique) during bulk inserts into a Hybrid Table?
+55. What is the recommended batch size for bulk loading into a Hybrid Table?
+56. How does Snowflake handle referential integrity constraints in Hybrid Tables?
+57. Can you define foreign key relationships between Hybrid Tables?
+58. Can you define foreign key relationships between a Hybrid Table and a standard Snowflake table?
+59. How do cascading deletes work with foreign key constraints in Hybrid Tables?
+60. What NOT NULL and CHECK constraints are supported in Hybrid Tables?
+
+---
+
+## 5. Hybrid Tables — Query Patterns
+
+61. What types of queries are best suited for Hybrid Tables vs. standard Snowflake tables?
+62. How do point lookup queries (lookup by primary key) perform on Hybrid Tables?
+63. How do range scan queries perform on Hybrid Tables compared to columnar tables?
+64. How do you join a Hybrid Table with a standard Snowflake table and what are the performance implications?
+65. What is the recommended pattern for running analytical aggregations on Hybrid Table data?
+66. How does Snowflake route a query to use row store vs. columnar store for a Hybrid Table?
+67. How do you use the Query Profile to understand whether a Hybrid Table query used the row store?
+68. What query patterns cause full table scans on a Hybrid Table?
+69. How do ORDER BY and GROUP BY operations perform on Hybrid Tables?
+70. How do window functions behave on Hybrid Tables compared to standard tables?
+71. What are the limitations of running complex analytical queries directly on Hybrid Tables?
+72. How do you optimize a multi-table join that includes a Hybrid Table?
+73. How does EXPLAIN output differ for Hybrid Table queries vs. standard table queries?
+74. How do you paginate through large result sets from a Hybrid Table efficiently?
+75. How do you implement a leaderboard or ranked list query using a Hybrid Table?
+
+---
+
+## 6. Hybrid Tables — Concurrency & Scalability
+
+76. What concurrency levels do Hybrid Tables support for simultaneous read and write operations?
+77. How does Snowflake scale Hybrid Table throughput for high-concurrency applications?
+78. What is the maximum number of concurrent transactions a Hybrid Table supports?
+79. How do Hybrid Tables handle read-heavy vs. write-heavy workload imbalances?
+80. What warehouse configuration is recommended for high-concurrency Hybrid Table workloads?
+81. How does Snowflake isolate Hybrid Table compute from analytical warehouse compute?
+82. What is the impact of index contention on Hybrid Table write throughput?
+83. How do you benchmark Hybrid Table performance for a given concurrency level?
+84. How does connection pooling interact with Hybrid Table transaction management?
+85. What monitoring metrics indicate that a Hybrid Table is becoming a concurrency bottleneck?
+
+---
+
+## 7. Hybrid Tables — Integration with Standard Snowflake Features
+
+86. Do Hybrid Tables support Time Travel? What are the limitations?
+87. Do Hybrid Tables support Zero-Copy Cloning?
+88. Can you create a Stream on a Hybrid Table for CDC?
+89. Can you define a Materialized View on top of a Hybrid Table?
+90. Can you create a Dynamic Table that sources data from a Hybrid Table?
+91. Do Hybrid Tables support Fail-Safe?
+92. Can you apply Row Access Policies to Hybrid Tables?
+93. Can you apply Dynamic Data Masking policies to Hybrid Table columns?
+94. How do Snowflake Tags work with Hybrid Tables for governance?
+95. Can you replicate Hybrid Tables using Snowflake database replication?
+96. How does data sharing work with Hybrid Tables?
+97. Can you use Snowpipe to load data directly into a Hybrid Table?
+98. How does the Search Optimization Service interact with Hybrid Tables?
+99. Can you use Snowpark DataFrames to read from and write to Hybrid Tables?
+100. How does Snowflake handle schema evolution (ALTER TABLE) for Hybrid Tables?
+
+---
+
+## 8. Hybrid Tables — Use Cases & Architecture
+
+101. What are the top real-world use cases for Hybrid Tables in Snowflake?
+102. How would you use a Hybrid Table to build a session management system?
+103. How would you implement a real-time inventory management system using Hybrid Tables?
+104. How would you use Hybrid Tables for a loyalty points or rewards tracking application?
+105. How would you design a fraud detection system that uses both Hybrid and standard tables?
+106. How would you use a Hybrid Table as a state store for a streaming data pipeline?
+107. How would you implement rate limiting or API quota tracking using a Hybrid Table?
+108. How would you build a real-time leaderboard using Hybrid Tables?
+109. How would you use Hybrid Tables for operational reporting with sub-second latency requirements?
+110. How do you architect a system that writes to a Hybrid Table and reads from a standard table for analytics?
+111. What is the recommended pattern for syncing Hybrid Table data to a standard table for reporting?
+112. How would you use Hybrid Tables in a multi-tier application architecture?
+113. When should you NOT use a Hybrid Table and stick with a standard Snowflake table?
+114. How do Hybrid Tables fit into a Lambda architecture pattern within Snowflake?
+115. How would you use Hybrid Tables alongside Snowpipe Streaming for a real-time operational system?
+
+---
+
+## 9. Hybrid Tables — Performance Tuning
+
+116. How do you identify slow queries on Hybrid Tables using Snowflake system views?
+117. What index strategy do you recommend for a Hybrid Table with mixed read/write workloads?
+118. How does primary key selection affect Hybrid Table write performance?
+119. What is the impact of a high-cardinality primary key vs. a low-cardinality one on Hybrid Table performance?
+120. How do you reduce write amplification caused by index maintenance on a Hybrid Table?
+121. How do you optimize a Hybrid Table for read-heavy workloads with occasional bulk writes?
+122. What warehouse size is recommended for different Hybrid Table workload profiles?
+123. How do you use query hints or session parameters to influence Hybrid Table query execution?
+124. What is the impact of transaction size (number of rows per transaction) on Hybrid Table throughput?
+125. How do you use connection pooling to maximize Hybrid Table concurrency without overloading the system?
+
+---
+
+## 10. Hybrid Tables — Monitoring & Operations
+
+126. What system views provide operational metrics for Hybrid Table transactions?
+127. How do you monitor lock wait times for Hybrid Table transactions?
+128. How do you detect and resolve long-running transactions on Hybrid Tables?
+129. What is the TRANSACTION_HISTORY view and what Hybrid Table insights does it provide?
+130. How do you set up alerting for Hybrid Table transaction failures or timeouts?
+131. How do you perform routine maintenance on a Hybrid Table (e.g., index rebuilding)?
+132. How do you monitor index utilization to determine if a secondary index is being used?
+133. What happens to Hybrid Table data during a Snowflake account upgrade or maintenance window?
+134. How do you back up and restore Hybrid Table data given limited Time Travel support?
+135. How do you migrate data from a standard Snowflake table to a Hybrid Table with minimal downtime?
+
+---
+
+## PART B: SNOWFLAKE STREAMING ANALYTICS
+
+---
+
+## 11. Streaming Fundamentals in Snowflake
+
+136. What streaming ingestion options does Snowflake natively support?
+137. What is the difference between micro-batch and true streaming in the context of Snowflake?
+138. How does Snowflake position itself in a modern streaming architecture alongside Kafka and Flink?
+139. What latency guarantees can Snowflake realistically provide for streaming workloads?
+140. What is the difference between Snowpipe, Snowpipe Streaming, and Kafka Connector for streaming?
+141. How do you choose between Snowpipe Streaming and the Kafka Connector for a given use case?
+142. What is event time vs. processing time in streaming analytics and how does Snowflake handle each?
+143. How do you implement watermarking for late-arriving events in a Snowflake streaming pipeline?
+144. What is the role of Dynamic Tables in a Snowflake streaming analytics architecture?
+145. How does Snowflake's streaming stack compare to architectures built on Apache Flink or Spark Streaming?
+
+---
+
+## 12. Snowpipe Streaming — Deep Dive
+
+146. What is the Snowpipe Streaming API and how does it differ from the original Snowpipe?
+147. What client SDKs support Snowpipe Streaming and what languages are available?
+148. What is a Snowpipe Streaming channel and how does it relate to a target table?
+149. How do you open a Snowpipe Streaming channel in the Java SDK?
+150. How do you insert rows into Snowflake using the Snowpipe Streaming `insertRows` API?
+151. What is the `insertRowsSynchronous` method and when would you use it?
+152. How does Snowpipe Streaming handle schema inference and evolution?
+153. What is the `offsetToken` in Snowpipe Streaming and how does it enable exactly-once semantics?
+154. How do you implement offset management to prevent duplicate records in Snowpipe Streaming?
+155. What happens to data in a Snowpipe Streaming channel if the client crashes mid-write?
+156. How do you monitor the lag of a Snowpipe Streaming channel?
+157. What is the `SYSTEM$PIPE_STATUS` function and what streaming metrics does it expose?
+158. How do you handle schema mismatch errors in Snowpipe Streaming?
+159. What are the throughput limits of Snowpipe Streaming and how do you scale beyond them?
+160. How do you close and reopen a Snowpipe Streaming channel safely?
+161. What is channel migration in Snowpipe Streaming and when is it needed?
+162. How does Snowpipe Streaming handle backpressure from a slow consumer?
+163. What is the recommended number of channels per table for high-throughput Snowpipe Streaming?
+164. How does Snowpipe Streaming interact with Snowflake's transactional guarantees?
+165. How do you use Snowpipe Streaming alongside Dynamic Tables for near-real-time analytics?
+
+---
+
+## 13. Kafka Connector for Snowflake — Deep Dive
+
+166. What is the Snowflake Kafka Connector and how does it integrate with Apache Kafka?
+167. How does the Kafka Connector use Kafka Connect as its deployment framework?
+168. What are the key configuration parameters for the Snowflake Kafka Connector?
+169. What is the difference between Snowpipe mode and Snowpipe Streaming mode in the Kafka Connector?
+170. How do you configure the Kafka Connector to use Snowpipe Streaming for lower latency?
+171. How does the Kafka Connector handle Kafka topic-to-Snowflake table mapping?
+172. How does the Kafka Connector handle schema evolution when using Confluent Schema Registry?
+173. What is the Avro format and how does the Kafka Connector deserialize Avro messages?
+174. How do you configure the Kafka Connector to handle JSON, Avro, and Protobuf message formats?
+175. How does the Kafka Connector handle Kafka consumer group offsets?
+176. What is the exactly-once delivery guarantee in the Kafka Connector and how is it implemented?
+177. How do you scale the Kafka Connector horizontally by adding more Kafka Connect workers?
+178. How do you monitor the Kafka Connector's lag and throughput using JMX or REST API?
+179. What is the dead letter queue (DLQ) in the Kafka Connector and how do you configure it?
+180. How do you handle Kafka message deserialization errors in the Snowflake Kafka Connector?
+181. What are the network and security requirements for connecting the Kafka Connector to Snowflake?
+182. How do you configure key-pair authentication for the Kafka Connector?
+183. How do you upgrade the Snowflake Kafka Connector without losing data or offsets?
+184. What is the impact of Kafka partition count on Snowflake ingestion parallelism?
+185. How do you tune the Kafka Connector's `buffer.count.records` and `buffer.flush.time` parameters?
+
+---
+
+## 14. Dynamic Tables for Streaming Analytics
+
+186. How do Dynamic Tables enable streaming analytics without writing explicit pipeline code?
+187. What is the target lag parameter and how does it control Dynamic Table refresh frequency?
+188. What is the minimum achievable lag for a Dynamic Table in Snowflake?
+189. How does Snowflake decide between incremental and full refresh for a Dynamic Table?
+190. What SQL constructs prevent a Dynamic Table from using incremental refresh?
+191. How do you build a multi-hop streaming pipeline using a DAG of Dynamic Tables?
+192. How does Snowflake manage dependencies between Dynamic Tables in a refresh DAG?
+193. What happens when an upstream Dynamic Table refresh fails in a DAG?
+194. How do you implement sessionization (session window aggregation) using Dynamic Tables?
+195. How do you implement tumbling window aggregations using Dynamic Tables?
+196. How do you implement sliding window aggregations using Dynamic Tables?
+197. How do you handle late-arriving data in a Dynamic Table-based streaming pipeline?
+198. How do you combine Snowpipe Streaming (for ingestion) with Dynamic Tables (for transformation)?
+199. What monitoring views show Dynamic Table refresh history and lag metrics?
+200. How do you alert on Dynamic Table refresh failures using Snowflake Alerts?
+201. What are the cost drivers for Dynamic Tables and how do you optimize them?
+202. How do you implement exactly-once processing semantics using Dynamic Tables?
+203. How does Dynamic Table refresh interact with Snowflake's Virtual Warehouse compute?
+204. Can Dynamic Tables use serverless compute for refresh? How does it work?
+205. How do you migrate a Stream + Task pipeline to Dynamic Tables and what are the trade-offs?
+
+---
+
+## 15. Streams for Streaming Analytics
+
+206. How do Snowflake Streams enable Change Data Capture for streaming analytics?
+207. What is the difference between Standard, Append-Only, and Insert-Only Streams for streaming use cases?
+208. How do you use an Append-Only Stream to efficiently process high-volume event data?
+209. How do you chain multiple Streams and Tasks to build a streaming transformation pipeline?
+210. What is the staleness window for a Stream and how does it affect streaming pipeline reliability?
+211. How do you reset a Stream offset to reprocess historical data?
+212. How do you use Streams on External Tables for streaming data lake ingestion?
+213. How do Streams on Dynamic Tables work and what use cases do they enable?
+214. How do you implement fan-out from a single Stream to multiple downstream consumers?
+215. What is the CHANGES clause in Snowflake and how does it relate to Streams?
+
+---
+
+## 16. Real-Time Aggregations & Windowing
+
+216. How do you implement tumbling window aggregations in Snowflake for streaming data?
+217. How do you implement hopping window aggregations in Snowflake?
+218. How do you implement session windows in Snowflake using time-gap-based sessionization?
+219. How do you use TIME_SLICE for time-based bucketing of streaming event data?
+220. How do you calculate rolling averages over a sliding time window in Snowflake?
+221. How do you implement running totals and cumulative metrics on streaming data?
+222. How do you handle out-of-order events in a Snowflake streaming aggregation pipeline?
+223. How do you implement a real-time top-N query on continuously arriving data?
+224. How do you use QUALIFY with window functions for streaming deduplication?
+225. H
