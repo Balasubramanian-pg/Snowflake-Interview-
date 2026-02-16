@@ -262,3 +262,271 @@
 179. How would you implement a data mesh architecture using Snowflake as the underlying platform?
 180. What governance policies and standards do you enforce when onboarding a new team to Snowflake?
 181. How do you document Snowflake data assets and ensure discoverability for analysts?
+# Snowflake Interview Questions — Set 2
+### 180 New Technical & Practical Questions (Non-SQL, Non-Duplicate)
+
+---
+
+## 1. Account & Organization Management
+
+1. What is a Snowflake Organization and how does it differ from a Snowflake Account?
+2. How do you manage multiple Snowflake accounts under a single Organization?
+3. What is ORGADMIN role and what privileges does it grant?
+4. How do you move a Snowflake account between cloud providers or regions within an Organization?
+5. What is account-level vs. organization-level billing in Snowflake?
+6. How do you enable and manage cross-account features using the Organization object?
+7. What is the purpose of the SHOW ORGANIZATION ACCOUNTS command?
+8. How does Snowflake handle account identifiers — what formats are supported?
+9. What is a locator-based vs. account name-based connection URL in Snowflake?
+10. How do you set organization-wide policies and enforce them across multiple accounts?
+
+---
+
+## 2. Connectivity & Drivers
+
+11. What client drivers and connectors does Snowflake officially support?
+12. How does the Snowflake JDBC driver differ from the ODBC driver in terms of use cases?
+13. What is the Snowflake Python connector and how does it handle connection pooling?
+14. What is the SnowSQL CLI and what are its primary use cases compared to the web UI?
+15. How do you configure a Snowflake connection using a private key for key-pair authentication?
+16. What is the Snowflake Go driver and when would you use it?
+17. How do you connect Snowflake to BI tools like Tableau, Power BI, or Looker?
+18. What are the connection parameters you must configure when setting up an ODBC/JDBC connection?
+19. How does Snowflake handle connection timeouts and session expiration?
+20. What is the Snowflake REST API and what operations does it support?
+
+---
+
+## 3. Snowflake Native App Framework
+
+21. What is the Snowflake Native App Framework and what problem does it solve?
+22. How does a Native App differ from a regular Snowflake application or stored procedure?
+23. What are the components of a Native App (manifest, setup script, etc.)?
+24. How do you publish a Native App to the Snowflake Marketplace?
+25. What are the security and permission model constraints when building a Native App?
+26. How does a consumer install and configure a Native App in their own Snowflake account?
+27. What is the role of the APPLICATION object in the Native App Framework?
+28. How do you version and update a Native App without disrupting consumers?
+29. What types of Snowflake objects can a Native App create inside a consumer's account?
+30. What are the limitations of Native Apps compared to building a full external SaaS product?
+
+---
+
+## 4. Snowflake Cortex AI Features
+
+31. What is Snowflake Cortex and what AI/ML capabilities does it provide natively?
+32. What are Cortex LLM Functions (e.g., COMPLETE, SUMMARIZE, SENTIMENT) and how do you invoke them?
+33. How does Cortex Search work and what types of queries does it support?
+34. What is Cortex Analyst and how does it enable natural language querying of Snowflake data?
+35. How do you use the EMBED_TEXT function in Snowflake Cortex for vector embeddings?
+36. What is a Cortex Fine-tuning job and when would you use it over a pre-built LLM function?
+37. How does Snowflake handle data privacy when using Cortex LLM features?
+38. What is the difference between Cortex and Snowpark ML in terms of AI/ML capabilities?
+39. How do you build a Retrieval-Augmented Generation (RAG) pipeline using Snowflake Cortex?
+40. What are the credit costs associated with Cortex LLM function calls?
+
+---
+
+## 5. Snowflake Marketplace & Data Products
+
+41. What is a Data Product in the context of Snowflake's Data Cloud?
+42. How do you create and publish a monetized listing on the Snowflake Marketplace?
+43. What are the different listing types on the Snowflake Marketplace (free, paid, personalized)?
+44. How does Snowflake handle revenue sharing and billing for paid Marketplace listings?
+45. What is a Provider Studio in Snowflake and what tools does it offer data providers?
+46. How do you restrict a Marketplace listing to specific consumers or regions?
+47. What is a sample dataset and how can it be attached to a Marketplace listing?
+48. How do you track usage analytics for your published Marketplace listings?
+49. What compliance and legal considerations apply when publishing data to the Marketplace?
+50. How do you handle versioning and updates to a published Marketplace data product?
+
+---
+
+## 6. Alerts & Notifications
+
+51. What are Snowflake Alerts and how do they differ from Tasks?
+52. How do you create an Alert in Snowflake and what triggers can be configured?
+53. What notification integrations does Snowflake support for sending alerts (email, SNS, etc.)?
+54. How do you set up an email notification integration in Snowflake?
+55. What is the difference between a serverless Alert and a warehouse-powered Alert?
+56. How do you chain Alerts with Tasks for complex event-driven workflows?
+57. What system views can you query to see Alert execution history and status?
+58. How do you implement a data freshness alert using Snowflake's native alerting?
+59. What are the limitations of Snowflake Alerts compared to external monitoring tools?
+60. How do you use Alerts to detect and notify on data quality issues?
+
+---
+
+## 7. Dynamic Tables
+
+61. What are Dynamic Tables in Snowflake and how do they differ from Materialized Views?
+62. How does the target lag parameter control refresh frequency for Dynamic Tables?
+63. What is the difference between user-defined lag and downstream lag for Dynamic Tables?
+64. How do Dynamic Tables handle incremental refresh vs. full refresh?
+65. Can Dynamic Tables depend on other Dynamic Tables? How does Snowflake manage the refresh DAG?
+66. What types of transformations are supported in Dynamic Table definitions?
+67. How do you monitor Dynamic Table refresh history and identify refresh failures?
+68. What are the compute costs associated with Dynamic Tables?
+69. When would you choose a Dynamic Table over a Stream+Task pipeline?
+70. What are the current limitations of Dynamic Tables (e.g., unsupported features, object types)?
+
+---
+
+## 8. Serverless Features & Compute Models
+
+71. What are Snowflake serverless features and how do they differ from Virtual Warehouse compute?
+72. Which Snowflake features use serverless compute (e.g., Snowpipe, Tasks, Alerts, Dynamic Tables)?
+73. How are serverless compute credits billed compared to Virtual Warehouse credits?
+74. What is the advantage of serverless Tasks over warehouse-powered Tasks?
+75. How does Snowflake automatically scale serverless compute resources?
+76. What are the trade-offs between serverless and warehouse-based compute for batch workloads?
+77. How do you estimate costs for serverless feature usage in Snowflake?
+78. What is Snowpark Container Services and how does it extend Snowflake's compute model?
+79. How do containers in Snowpark Container Services communicate with Snowflake data?
+80. What types of workloads are best suited for Snowpark Container Services?
+
+---
+
+## 9. Search Optimization Service
+
+81. What is the Search Optimization Service (SOS) in Snowflake and what query patterns does it accelerate?
+82. How does the SOS differ from clustering keys in terms of use case and implementation?
+83. What types of predicates benefit from the Search Optimization Service?
+84. How do you enable the Search Optimization Service on a table or specific columns?
+85. What are the storage and compute cost implications of enabling SOS?
+86. How does SOS handle VARIANT and semi-structured column searches?
+87. What is the difference between full-text search and point lookup optimization in SOS?
+88. How do you verify whether the SOS is being used for a specific query?
+89. When would you NOT use the Search Optimization Service?
+90. How do you monitor and manage SOS maintenance overhead?
+
+---
+
+## 10. Materialized Views
+
+91. What is a Materialized View in Snowflake and how does it differ from a regular view?
+92. How does Snowflake automatically maintain and refresh Materialized Views?
+93. What are the restrictions on queries that can be used to define a Materialized View?
+94. How does a query planner decide to use a Materialized View vs. the base table?
+95. What happens to a Materialized View when the underlying base table is modified?
+96. What are the cost implications of using Materialized Views in Snowflake?
+97. How do Materialized Views interact with clustering keys on the base table?
+98. Can Materialized Views be defined on external tables or Dynamic Tables?
+99. How do you monitor the freshness and maintenance status of a Materialized View?
+100. When should you prefer a Dynamic Table over a Materialized View?
+
+---
+
+## 11. Data Quality & Observability
+
+101. What built-in capabilities does Snowflake offer for data observability?
+102. How do you implement row count and null-check monitoring natively in Snowflake?
+103. What is the DATA_METRIC_FUNCTION object in Snowflake and how does it support data quality?
+104. How do you schedule data quality metric evaluations using Snowflake's native features?
+105. What system views track data metric function results over time?
+106. How does Snowflake's Access History view help with data observability?
+107. How do you detect schema drift in incoming data using Snowflake-native approaches?
+108. What third-party observability tools integrate natively with Snowflake?
+109. How do you implement SLA monitoring for data pipelines using Snowflake Tasks and Alerts?
+110. What is the QUERY_HISTORY view and what observability insights can you derive from it?
+
+---
+
+## 12. Table Types & Design
+
+111. What are the four table types in Snowflake (Permanent, Transient, Temporary, External) and when do you use each?
+112. How does a Transient table differ from a Permanent table in terms of Fail-Safe and Time Travel?
+113. What is a Temporary table in Snowflake and what is its scope and lifecycle?
+114. How do table types affect storage costs in Snowflake?
+115. What is a hybrid table in Snowflake and what workloads is it optimized for?
+116. How does Snowflake Unistore combine transactional and analytical workloads using hybrid tables?
+117. What indexing mechanisms do hybrid tables support that regular Snowflake tables do not?
+118. How do you design a table schema for optimal pruning and clustering in Snowflake?
+119. What are the considerations for choosing between wide tables vs. normalized schemas in Snowflake?
+120. How does Snowflake handle NULL values in storage and how do they affect compression?
+
+---
+
+## 13. Integration & Ecosystem
+
+121. How does Snowflake integrate with Apache Kafka using the Kafka Connector?
+122. What is the Snowflake Connector for Python and how does it differ from the Snowpark library?
+123. How do you integrate Snowflake with Apache Spark using the Snowflake Spark Connector?
+124. What is the Snowflake connector for dbt Cloud and how does it manage model execution?
+125. How do you integrate Snowflake with Fivetran or Airbyte for ELT pipelines?
+126. What is the Snowflake Connector for ServiceNow and what data does it sync?
+127. How does the Snowflake Connector for Google Analytics work?
+128. How do you use Terraform to manage Snowflake infrastructure as code?
+129. What Snowflake-native features support GitOps and version-controlled deployments?
+130. How do you integrate Snowflake with orchestration tools like Apache Airflow or Prefect?
+
+---
+
+## 14. Logging, Tracing & Telemetry
+
+131. What is the Snowflake event table and what types of telemetry data does it store?
+132. How do you enable logging for Stored Procedures and UDFs in Snowflake?
+133. What log levels are supported in Snowflake's logging framework?
+134. How do you emit custom trace events from Snowpark code?
+135. What is the relationship between an event table and the Snowflake telemetry system?
+136. How do you query logs and traces stored in the event table for debugging?
+137. How do you set up log and trace data retention policies for event tables?
+138. What is the SYSTEM$LOG function and how does it differ from Python's logging module in Snowpark?
+139. How do you integrate Snowflake telemetry with external observability platforms like Datadog?
+140. What are best practices for structured logging in Snowflake Stored Procedures?
+
+---
+
+## 15. Snowflake on Different Cloud Platforms
+
+141. What are the differences in Snowflake's feature availability across AWS, Azure, and GCP?
+142. How does Snowflake leverage cloud-native storage services (S3, Azure Blob, GCS) under the hood?
+143. What is PrivateLink in Snowflake and how does it improve network security on each cloud?
+144. How do you configure AWS PrivateLink for a Snowflake account?
+145. What is the difference between a Snowflake Business Critical account and a standard account in terms of cloud networking?
+146. How does Snowflake handle cloud provider outages and what is its SLA?
+147. What cloud IAM roles and permissions are required to connect Snowflake to S3 or Azure Blob?
+148. How does Snowflake's pricing differ across AWS, Azure, and GCP?
+149. What is Snowflake's approach to data sovereignty and compliance certifications (SOC 2, ISO 27001, FedRAMP)?
+150. How do you migrate a Snowflake account from one cloud provider to another?
+
+---
+
+## 16. Advanced Performance & Internals
+
+151. How does Snowflake's query optimizer work at a high level?
+152. What is the role of statistics in Snowflake's query planning and how are they maintained?
+153. How does Snowflake handle spilling to disk and remote storage during query execution?
+154. What is the impact of spilling on query performance and how do you reduce it?
+155. How does Snowflake implement vectorized execution for analytical queries?
+156. What is the difference between compile time and execution time in Snowflake query processing?
+157. How does Snowflake handle concurrent read and write operations on the same table?
+158. What is optimistic concurrency control in Snowflake and how does it handle write conflicts?
+159. How does Snowflake's file pruning work at the micro-partition level during query execution?
+160. What are partition overlaps and how do they degrade pruning efficiency?
+161. How does Snowflake's columnar compression work and what encoding schemes does it use?
+162. What is the purpose of the SYSTEM$CLUSTERING_INFORMATION function?
+163. How do you interpret clustering depth and overlap statistics to assess table health?
+164. What is adaptive query execution in Snowflake and how does it improve runtime performance?
+165. How do you use the QUERY_ACCELERATION_HISTORY view to assess the value of the Query Acceleration Service?
+
+---
+
+## 17. Query Acceleration Service & Specialized Features
+
+166. What is the Query Acceleration Service (QAS) in Snowflake and what query patterns does it target?
+167. How does QAS differ from simply increasing warehouse size for performance?
+168. How do you enable QAS on a warehouse and what scale factor options are available?
+169. How are QAS credits billed and what is the cost model?
+170. What types of queries are ineligible for query acceleration?
+171. What is the RESULT_SCAN function in Snowflake and how can it be used practically?
+172. What is the purpose of the GENERATOR table function in Snowflake?
+173. How does Snowflake handle recursive CTEs and what are the depth limitations?
+174. What is the TABLESAMPLE feature in Snowflake and when would you use it?
+175. How does Snowflake's automatic query rewrites work for Materialized Views?
+176. What is the purpose of the SYSTEM$ESTIMATE_QUERY_ACCELERATION function?
+177. How do you use the EXPLAIN command output to manually identify inefficiencies?
+178. What are the differences between scalar subqueries and correlated subqueries in terms of Snowflake performance?
+179. How do window functions perform in Snowflake compared to GROUP BY aggregations for the same result?
+180. What is the role of the pruning ratio metric in assessing the efficiency of a Snowflake query?
+
