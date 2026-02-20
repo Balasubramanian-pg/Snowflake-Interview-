@@ -1,0 +1,12 @@
+# Comparing senior workouts
+
+## Key Concepts
+- 
+
+## Exercises / SQL Code
+```sql
+
+```
+
+## Related
+- [[3. Advanced Snowflake techniques]]
