@@ -1,4 +1,4 @@
-# Motivating member marketing
+# Motivating Member Marketing
 
 ## Key Concepts
 - 
