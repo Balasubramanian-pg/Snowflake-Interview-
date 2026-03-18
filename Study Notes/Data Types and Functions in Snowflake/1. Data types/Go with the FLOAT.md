@@ -1,4 +1,4 @@
-# Go with the FLOAT
+# Go With The Float
 
 ## Key Concepts
 - 
