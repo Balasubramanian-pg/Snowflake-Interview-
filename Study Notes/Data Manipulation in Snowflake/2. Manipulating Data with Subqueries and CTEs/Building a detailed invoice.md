@@ -1,4 +1,4 @@
-# Building a detailed invoice
+# Building A Detailed Invoice
 
 ## Core Logic
 - 
