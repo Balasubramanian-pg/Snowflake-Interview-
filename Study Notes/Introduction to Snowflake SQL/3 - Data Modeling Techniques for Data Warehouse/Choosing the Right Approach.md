@@ -1,4 +1,4 @@
-# Choosing the Right Approach
+# Choosing The Right Approach
 
 **Module:** 3 - Data Modeling Techniques for Data Warehouse
 
