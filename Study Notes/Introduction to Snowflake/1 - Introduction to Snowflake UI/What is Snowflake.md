@@ -1,4 +1,4 @@
-# What is Snowflake?
+# What Is Snowflake
 
 **Module:** 1 - Introduction to Snowflake UI
 
