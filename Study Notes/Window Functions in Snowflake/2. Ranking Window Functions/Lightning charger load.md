@@ -1,4 +1,4 @@
-# Lightning charger load
+# Lightning Charger Load
 
 ## Summary
 
