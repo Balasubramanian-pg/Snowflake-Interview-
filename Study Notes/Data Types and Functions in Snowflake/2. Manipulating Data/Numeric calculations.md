@@ -1,4 +1,4 @@
-# Numeric calculations
+# Numeric CAlculations
 
 ## Key Concepts
 - 
