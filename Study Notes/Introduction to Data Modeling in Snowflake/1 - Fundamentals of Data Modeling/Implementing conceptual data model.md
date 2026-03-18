@@ -1,4 +1,4 @@
-# Implementing conceptual data model
+# Implementing Conceptual Data Model
 
 **Module:** 1 - Fundamentals of Data Modeling
 
