@@ -1,4 +1,4 @@
-# Snowflake data types
+# Snowflake Data Types
 
 ## Summary
 
