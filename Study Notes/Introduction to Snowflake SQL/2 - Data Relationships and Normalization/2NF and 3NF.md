@@ -1,4 +1,4 @@
-# 2NF and 3NF
+# 2Nf And 3Nf
 
 **Module:** 2 - Data Relationships and Normalization
 
