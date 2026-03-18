@@ -1,4 +1,4 @@
-# User-defined functions in Snowflake
+# User Defined Functions In Snowflake
 
 ## Key Concepts
 - 
