@@ -1,4 +1,4 @@
-# Text data types
+# Text Data Types
 
 ## Key Concepts
 - 
