@@ -1,4 +1,4 @@
-# Exploring Conceptual and Logical Data Models
+# Exploring Conceptual And Logical Data Models
 
 **Module:** 1 - Fundamentals of Data Modeling
 
