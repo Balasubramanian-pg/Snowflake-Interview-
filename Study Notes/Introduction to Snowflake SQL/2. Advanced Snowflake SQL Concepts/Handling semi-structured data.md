@@ -1,4 +1,4 @@
-# Handling semi-structured data
+# Handling Semi Structured Data
 
 ## Summary
 
