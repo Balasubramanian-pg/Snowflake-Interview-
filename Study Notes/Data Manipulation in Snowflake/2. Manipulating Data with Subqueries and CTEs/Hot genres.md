@@ -1,4 +1,4 @@
-# Hot genres
+# Hot Genres
 
 ## Core Logic
 - 
