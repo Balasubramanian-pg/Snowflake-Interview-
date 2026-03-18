@@ -1,4 +1,4 @@
-# Virtual data warehouses
+# Virtual Data Warehouses
 
 **Module:** 4 - Snowflake Components
 
