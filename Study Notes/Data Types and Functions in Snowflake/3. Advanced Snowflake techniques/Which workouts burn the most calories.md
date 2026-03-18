@@ -1,4 +1,4 @@
-# Which workouts burn the most calories?
+# Which Workouts Burn The Most CAlories
 
 ## Key Concepts
 - 
