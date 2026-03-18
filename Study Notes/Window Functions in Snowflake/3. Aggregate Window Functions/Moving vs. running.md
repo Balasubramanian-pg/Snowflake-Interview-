@@ -1,4 +1,4 @@
-# Moving vs. running
+# Moving Vs. Running
 
 ## Summary
 
