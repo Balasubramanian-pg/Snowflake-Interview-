@@ -1,4 +1,4 @@
-# Applying 3NF
+# Applying 3Nf
 
 **Module:** 2 - Data Relationships and Normalization
 
