@@ -1,4 +1,4 @@
-# Maintaining charger efficiency
+# Maintaining Charger Efficiency
 
 ## Summary
 
