@@ -1,4 +1,4 @@
-# Identifying inefficient chargers
+# IDentifying Inefficient Chargers
 
 ## Summary
 
