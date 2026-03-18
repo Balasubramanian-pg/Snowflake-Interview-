@@ -1,4 +1,4 @@
-# Investigating product categories
+# Investigating Product CAtegories
 
 **Module:** 1 - Introduction to Snowflake UI
 
