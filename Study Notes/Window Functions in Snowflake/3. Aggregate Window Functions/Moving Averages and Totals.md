@@ -1,4 +1,4 @@
-# Moving Averages and Totals
+# Moving Averages And Totals
 
 ## Summary
 
