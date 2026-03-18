@@ -1,4 +1,4 @@
-# Visualizing charging session duration and cost
+# Visualizing Charging Session Duration And Cost
 
 ## Summary
 
