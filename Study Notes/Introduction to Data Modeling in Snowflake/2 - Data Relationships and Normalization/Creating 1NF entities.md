@@ -1,4 +1,4 @@
-# Creating 1NF entities
+# Creating 1Nf Entities
 
 **Module:** 2 - Data Relationships and Normalization
 
