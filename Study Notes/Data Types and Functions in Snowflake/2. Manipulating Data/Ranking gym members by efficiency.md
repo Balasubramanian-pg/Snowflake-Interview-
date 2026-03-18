@@ -1,4 +1,4 @@
-# Ranking gym members by efficiency
+# Ranking Gym Members By Efficiency
 
 ## Key Concepts
 - 
