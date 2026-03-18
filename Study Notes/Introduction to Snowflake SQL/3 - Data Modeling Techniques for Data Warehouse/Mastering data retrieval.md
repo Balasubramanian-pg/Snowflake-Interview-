@@ -1,4 +1,4 @@
-# Mastering data retrieval
+# Mastering Data Retrieval
 
 **Module:** 3 - Data Modeling Techniques for Data Warehouse
 
