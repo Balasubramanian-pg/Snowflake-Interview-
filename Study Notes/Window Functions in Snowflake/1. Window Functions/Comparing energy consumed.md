@@ -1,4 +1,4 @@
-# Comparing energy consumed
+# Comparing Energy Consumed
 
 ## Summary
 
