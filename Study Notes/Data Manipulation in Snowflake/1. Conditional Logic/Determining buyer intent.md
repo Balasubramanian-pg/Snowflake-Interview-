@@ -1,4 +1,4 @@
-# Determining buyer intent
+# Determining Buyer Intent
 
 ## Core Logic
 - 
