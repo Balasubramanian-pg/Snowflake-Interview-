@@ -1,4 +1,4 @@
-# Comparing invoice totals
+# Comparing Invoice Totals
 
 ## Core Logic
 - 
