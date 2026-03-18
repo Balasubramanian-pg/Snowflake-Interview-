@@ -1,4 +1,4 @@
-# Conditional logic with CASE statements
+# Conditional Logic With CAse Statements
 
 ## Core Logic
 - 
