@@ -1,4 +1,4 @@
-# Datetime data types
+# Datetime Data Types
 
 ## Key Concepts
 - 
