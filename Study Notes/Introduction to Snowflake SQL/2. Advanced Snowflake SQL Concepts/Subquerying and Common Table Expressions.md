@@ -1,4 +1,4 @@
-# Subquerying and Common Table Expressions
+# Subquerying And Common Table Expressions
 
 ## Summary
 
