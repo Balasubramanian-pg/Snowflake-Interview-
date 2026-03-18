@@ -1,4 +1,4 @@
-# Introduction to Snowflake SQL
+# Introduction To Snowflake Sql
 
 ## Summary
 
