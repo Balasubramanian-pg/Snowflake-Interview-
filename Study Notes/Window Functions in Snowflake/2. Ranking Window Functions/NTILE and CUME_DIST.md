@@ -1,4 +1,4 @@
-# NTILE and CUME_DIST
+# Ntile And Cume Dist
 
 ## Summary
 
