@@ -1,4 +1,4 @@
-# Validating data quality
+# Validating Data Quality
 
 ## Core Logic
 - 
