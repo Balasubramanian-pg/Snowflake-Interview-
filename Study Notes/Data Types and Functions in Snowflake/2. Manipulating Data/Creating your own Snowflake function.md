@@ -1,4 +1,4 @@
-# Creating your own Snowflake function
+# Creating Your Own Snowflake Function
 
 ## Key Concepts
 - 
