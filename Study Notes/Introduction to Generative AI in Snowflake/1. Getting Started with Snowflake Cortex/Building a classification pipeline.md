@@ -1,4 +1,4 @@
-# Building a classification pipeline
+# Building A Classification Pipeline
 
 ## Summary
 
