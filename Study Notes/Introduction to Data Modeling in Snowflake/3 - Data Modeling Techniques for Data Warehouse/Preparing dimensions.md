@@ -1,4 +1,4 @@
-# Preparing dimensions
+# Preparing Dimensions
 
 **Module:** 3 - Data Modeling Techniques for Data Warehouse
 
