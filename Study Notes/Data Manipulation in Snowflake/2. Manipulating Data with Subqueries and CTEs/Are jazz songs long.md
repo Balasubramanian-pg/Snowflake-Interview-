@@ -1,4 +1,4 @@
-# Are jazz songs long?
+# Are Jazz Songs Long
 
 ## Core Logic
 - 
