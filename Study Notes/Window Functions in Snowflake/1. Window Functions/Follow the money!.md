@@ -1,4 +1,4 @@
-# Follow the money!
+# Follow The Money!
 
 ## Summary
 
