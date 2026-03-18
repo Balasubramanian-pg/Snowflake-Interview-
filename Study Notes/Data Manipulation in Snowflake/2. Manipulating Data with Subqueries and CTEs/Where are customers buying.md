@@ -1,4 +1,4 @@
-# Where are customers buying?
+# Where Are Customers Buying
 
 ## Core Logic
 - 
