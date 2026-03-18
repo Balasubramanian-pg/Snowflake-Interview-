@@ -1,4 +1,4 @@
-# Partitioning data in a window function
+# Partitioning Data In A Window Function
 
 ## Summary
 
