@@ -1,4 +1,4 @@
-# Managing display length
+# Managing Display Length
 
 ## Key Concepts
 - 
