@@ -1,4 +1,4 @@
-# Ranking window functions
+# Ranking Window Functions
 
 ## Summary
 
