@@ -1,4 +1,4 @@
-# Creating a retail table
+# Creating A Retail Table
 
 ## Key Concepts
 - 
