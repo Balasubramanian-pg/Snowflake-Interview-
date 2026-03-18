@@ -1,4 +1,4 @@
-# Identifying Data Redundancy
+# IDentifying Data Redundancy
 
 **Module:** 2 - Data Relationships and Normalization
 
