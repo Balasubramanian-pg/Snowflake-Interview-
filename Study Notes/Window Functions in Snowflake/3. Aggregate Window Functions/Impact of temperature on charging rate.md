@@ -1,4 +1,4 @@
-# Impact of temperature on charging rate
+# Impact Of Temperature On Charging Rate
 
 ## Summary
 
