@@ -1,4 +1,4 @@
-# Components of data modeling
+# Components Of Data Modeling
 
 **Module:** 1 - Fundamentals of Data Modeling
 
