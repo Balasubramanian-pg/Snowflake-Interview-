@@ -1,4 +1,4 @@
-# Retrieving data from ER model
+# Retrieving Data From Er Model
 
 **Module:** 3 - Data Modeling Techniques for Data Warehouse
 
