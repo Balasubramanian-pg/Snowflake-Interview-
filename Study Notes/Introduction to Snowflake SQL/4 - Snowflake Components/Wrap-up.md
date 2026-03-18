@@ -1,4 +1,4 @@
-# Wrap-up
+# Wrap Up
 
 **Module:** 4 - Snowflake Components
 
