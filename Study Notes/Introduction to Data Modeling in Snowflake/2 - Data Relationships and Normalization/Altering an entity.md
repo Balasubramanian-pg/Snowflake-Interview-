@@ -1,4 +1,4 @@
-# Altering an entity
+# Altering An Entity
 
 **Module:** 2 - Data Relationships and Normalization
 
