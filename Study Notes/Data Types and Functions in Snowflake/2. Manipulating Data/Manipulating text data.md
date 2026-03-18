@@ -1,4 +1,4 @@
-# Manipulating text data
+# Manipulating Text Data
 
 ## Key Concepts
 - 
