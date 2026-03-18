@@ -1,4 +1,4 @@
-# Early filtering
+# Early Filtering
 
 ## Summary
 
