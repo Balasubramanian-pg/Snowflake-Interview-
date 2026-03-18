@@ -1,4 +1,4 @@
-# Window frames
+# Window Frames
 
 ## Summary
 
