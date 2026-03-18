@@ -1,4 +1,4 @@
-# Retrieving data from dimensional model
+# Retrieving Data From Dimensional Model
 
 **Module:** 3 - Data Modeling Techniques for Data Warehouse
 
