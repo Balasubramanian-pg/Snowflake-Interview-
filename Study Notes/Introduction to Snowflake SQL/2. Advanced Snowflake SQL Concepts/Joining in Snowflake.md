@@ -1,4 +1,4 @@
-# Joining in Snowflake
+# Joining In Snowflake
 
 ## Summary
 
