@@ -1,4 +1,4 @@
-# Functions, sorting, and grouping
+# Functions, Sorting, And Grouping
 
 ## Summary
 
