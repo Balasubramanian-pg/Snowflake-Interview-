@@ -1,4 +1,4 @@
-# Querying using Snowflake SQL
+# Querying Using Snowflake Sql
 
 ## Summary
 
