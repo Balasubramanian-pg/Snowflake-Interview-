@@ -1,4 +1,4 @@
-# Query Performance in Snowflake
+# Query Performance In Snowflake
 
 **Module:** 4 - Snowflake Components
 
