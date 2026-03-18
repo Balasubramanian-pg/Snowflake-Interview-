@@ -1,4 +1,4 @@
-# Implementing views
+# Implementing Views
 
 **Module:** 4 - Snowflake Components
 
