@@ -1,4 +1,4 @@
-# Defining text data
+# Defining Text Data
 
 ## Key Concepts
 - 
