@@ -1,4 +1,4 @@
-# Congratulations!
+# Congratulations
 
 ## Key Concepts
 - 
