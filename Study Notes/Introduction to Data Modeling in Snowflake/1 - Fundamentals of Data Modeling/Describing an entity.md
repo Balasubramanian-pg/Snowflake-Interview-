@@ -1,4 +1,4 @@
-# Describing an entity
+# Describing An Entity
 
 **Module:** 1 - Fundamentals of Data Modeling
 
