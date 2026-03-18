@@ -1,4 +1,4 @@
-# Explore the Store data
+# Explore The Store Data
 
 ## Core Logic
 - 
