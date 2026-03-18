@@ -1,4 +1,4 @@
-# Building a window function
+# Building A Window Function
 
 ## Summary
 
