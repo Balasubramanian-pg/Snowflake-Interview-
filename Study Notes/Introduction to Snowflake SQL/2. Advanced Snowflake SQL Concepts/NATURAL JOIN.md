@@ -1,4 +1,4 @@
-# NATURAL JOIN
+# Natural Join
 
 ## Summary
 
