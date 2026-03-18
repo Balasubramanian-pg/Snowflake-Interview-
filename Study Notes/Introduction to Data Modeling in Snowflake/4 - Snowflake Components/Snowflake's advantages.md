@@ -1,4 +1,4 @@
-# Snowflake's advantages
+# Snowflake'S ADvantages
 
 **Module:** 4 - Snowflake Components
 
