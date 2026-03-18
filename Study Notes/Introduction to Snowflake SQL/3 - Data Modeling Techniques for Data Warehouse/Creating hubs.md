@@ -1,4 +1,4 @@
-# Creating hubs
+# Creating Hubs
 
 **Module:** 3 - Data Modeling Techniques for Data Warehouse
 
