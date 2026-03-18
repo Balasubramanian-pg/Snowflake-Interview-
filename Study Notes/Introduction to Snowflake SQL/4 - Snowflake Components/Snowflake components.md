@@ -1,4 +1,4 @@
-# Snowflake components
+# Snowflake Components
 
 **Module:** 4 - Snowflake Components
 
