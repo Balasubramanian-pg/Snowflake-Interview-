@@ -1,4 +1,4 @@
-# Navigate to a table
+# Navigate To A Table
 
 **Module:** 1 - Introduction to Snowflake UI
 
