@@ -1,4 +1,4 @@
-# Manipulating datetime data
+# Manipulating Datetime Data
 
 ## Key Concepts
 - 
