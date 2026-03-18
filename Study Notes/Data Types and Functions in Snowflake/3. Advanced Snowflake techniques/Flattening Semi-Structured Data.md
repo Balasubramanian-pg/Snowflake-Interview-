@@ -1,4 +1,4 @@
-# Flattening Semi-Structured Data
+# Flattening Semi Structured Data
 
 ## Key Concepts
 - 
