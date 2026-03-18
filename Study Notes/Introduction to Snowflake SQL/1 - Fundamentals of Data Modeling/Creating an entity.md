@@ -1,4 +1,4 @@
-# Creating an entity
+# Creating An Entity
 
 **Module:** 1 - Fundamentals of Data Modeling
 
