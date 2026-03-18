@@ -1,4 +1,4 @@
-# Checking data types
+# Checking Data Types
 
 ## Summary
 
